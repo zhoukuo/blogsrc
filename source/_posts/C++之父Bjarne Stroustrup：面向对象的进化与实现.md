@@ -1,5 +1,5 @@
 ---
-title: 'C++之父Bjarne Stroustrup:面向对象的进化与实现'
+title: 'C++之父Bjarne Stroustrup：面向对象的进化与实现'
 date: 2016-08-10 13:42:47
 tags: 文化
 ---
