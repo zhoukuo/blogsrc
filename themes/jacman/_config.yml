@@ -58,7 +58,7 @@ author:
   zhihu:      ## e.g. jark  for http://www.zhihu.com/people/jark
   email:      ## e.g. imjark@gmail.com
   twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
-  github:     zhoukuo ## e.g. wuchong for https://github.com/wuchong
+  github:     ## e.g. wuchong for https://github.com/wuchong
   facebook:   ## e.g. imjark for https://facebook.com/imjark
   linkedin:   ## e.g. wuchong1014 for https://www.linkedin.com/in/wuchong1014
   google_plus:    ## e.g. "111190881341800841449" for https://plus.google.com/u/0/111190881341800841449, the "" is needed!
@@ -78,10 +78,9 @@ links:
   云　风: http://blog.codingnow.com/
   阮一峰: http://www.ruanyifeng.com/blog/
   王　垠: http://www.yinwang.org/
-  乐编程: http://www.01happy.com/
-  Go语言圣经: https://docs.ruanjiadeng.com/gopl-zh/
-  Go标准库手册: http://godoc.ml/
-  Golang中国: http://www.golangtc.com/
+  Go下载: http://www.golangtc.com/download 
+  Go手册: http://godoc.ml/
+  Go圣经: https://docs.ruanjiadeng.com/gopl-zh/
 
 #### Comment
 duoshuo_shortname: zhoukuo ## e.g. wuchong   your duoshuo short name.
