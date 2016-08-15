@@ -14,7 +14,7 @@ Golang内置了以下这些基础类型：
 * 错误类型：error
 
 ## 布尔类型
-Golang的不二类型和其它语言极本一致：
+Golang的布尔类型和其它语言基本一致：
 
 ```golang
 var v1 bool
@@ -103,7 +103,7 @@ fmt.Println("The first character of \"%s\" is %c.\n, str, ch)
 平常常用的字符串操作包括：
 * 字符串连接：x + y
 * 字符串长度：len(s)
-* 取字符：   	s[i]
+* 取字符：   		s[i]
 
 更多字符串操作，请参考标准库strings包。
 
