@@ -2,8 +2,6 @@
 title: about
 date: 2016-08-16 10:42:06
 ---
-![](https://avatars2.githubusercontent.com/u/1930531?v=3&s=460)
-
 姓　名：周阔
 英文名：Dennis Zhou (为纪念已故的C语言之父Dennis Ritchie)
 星　座：金牛座
