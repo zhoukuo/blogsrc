@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Geeker's Way
+title: Gopher's Way
 subtitle: 生活不止眼前的苟且，还有诗和远方
-description: 
+description:
 author: zhoukuo
 language: zh-CN
 timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://zhoukuo@github.com
+url: https://zhoukuo.github.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -63,8 +63,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: jacman
-# theme: landscape-plus
+# theme: jacman
+theme: concise
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

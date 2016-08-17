@@ -2,9 +2,10 @@
 title: C 语言已死？
 date: 2016-08-11 13:51:02
 tags: c
+categories: c
 ---
+<!-- more -->
 今天俗一把，掺乎近期网上最热门的这个话题：[C语言已经死了，5个需要忘却它的理由](http://developer.51cto.com/art/200612/36506.htm)。大家[驳来](http://blog.csdn.net/xushiweizh/archive/2007/01/07/1476422.aspx)、[驳去](http://blog.csdn.net/Analyst/archive/2007/01/08/1476994.aspx) 的。这的确是一个[不值得一驳](http://blog.csdn.net/Raptor/archive/2007/01/10/1478831.aspx)的问题，我这里也没打算驳斥那些观点。只是写点别的：
-
 C 并不是对机器模型的完整抽象，就是说把 C 作为一种 portable assembly language 是有缺陷的。即使是做底层，光有 C 也是不够的 (IMHO) 。
 
 C 语言的卫道者们最喜欢举的一个例子是：某某语言的 VM 都是用 C 的；或是某某语言都是先编译成 C 再编译成本地码等等，以示 C 的重要性。没错，现今的事实如此，这是历史选择的结果。我最近在读一本翻译的很糟糕的书，[《游戏——自然规律支配偶然性》](http://www.douban.com/subject/1272283/) 。如果有人耐着性子读下去，就可以从书中列举的小球游戏看到选择一般怎样发生。

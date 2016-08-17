@@ -2,9 +2,10 @@
 title: 面向对象设计原则和创建SOLID应用的5个方法
 date: 2016-08-09 13:52:56
 tags: 设计
+categories: 设计
 ---
+<!-- more -->
 最近我听到了很多关于函数式编程(FP)，受之启发我觉得也应该关注面向对象编程(OOP)和面向对象设计(OOD)，因为在设计系统时这些仍然非常重要。
-
 我们将以SOLID原则为起点开始我们的旅程。SOLID原则是类级别的，面向对象的设计理念，它们与测试工具一起帮你改进腐坏的代码。SOLID由程序员们最喜欢的Bob大叔[Robert C. Martin](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)提出，它其实是五个其他缩略词的组合——SRP， OCP， LSP， ISP， DIP，我会在下面有更深入的介绍。最重要的是，SOLID原则使你的软件变得更有价值。
 
 ![](http://incdn1.b0.upaiyun.com/2014/04/ca4429b3b5f254aca3bdb020e5851ffc.jpg)

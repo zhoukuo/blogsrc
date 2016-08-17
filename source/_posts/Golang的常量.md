@@ -2,13 +2,13 @@
 title: Golang的常量
 date: 2016-08-14 17:58:23
 tags: golang
+categories: golang
 ---
-
+<!-- more -->
 在Golang中，常量可以是数字类型、布尔类型、字符串类型等。
 
 ## 字面常量
 所谓字面常量，是指程序中硬编码的常量：
-
 ```golang
 -12		// 整数类型的常量		
 3.1415926	// 浮点类型的常量
@@ -23,7 +23,7 @@ true		// 布尔类型的常量
 
 ```golang
 const Pi float64 = 3.1415926
-const zero = 0.0		// 无类型浮点常量
+const zero = 0.0			// 无类型浮点常量
 const  {
 	size int64 = 1024
 	eof = -1		// 无类型整形常量
