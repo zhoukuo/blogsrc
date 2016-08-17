@@ -15,7 +15,7 @@ var v2 string
 var v3 [10]int
 var v4 []int
 var v5 struct {
-	f int
+    f int
 }
 var v6 *int
 var v7 map[string]int
@@ -30,8 +30,8 @@ var v8 func(a int) int
 
 ```golang
 var (
-	v1 int
-	v2 string
+    v1 int
+    v2 string
 )
 ```
 
@@ -60,7 +60,7 @@ i, j = j, i
 
 ```golang
 func GetName() (firstName, lastName, nickName string) {
-	return "May", "Chan", "Chibi Maruko"
+    return "May", "Chan", "Chibi Maruko"
 }
 ```
 

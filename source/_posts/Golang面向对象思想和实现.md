@@ -10,9 +10,9 @@ golang中并没有明确的面向对象的说法，实在要扯上的话，可�
 ## 类声明
 ```golang
 type Poem struct {
-	Title  string
-	Author string
-	intro  string
+    Title  string
+    Author string
+    intro  string
 }
 ```
 
@@ -23,13 +23,13 @@ type Poem struct {
 
 ```golang
 func (poem *Poem) publish() {
-	fmt.Println("poem publish")
+    fmt.Println("poem publish")
 }
 ```
 或者
 ```golang
 func (poem Poem) publish() {
-	fmt.Println("poem publish")
+    fmt.Println("poem publish")
 }
 ```
 和其它语言不一样，golang声明方法和普通方法一致，只是在func后增加了poem \*Poem这样的声明。加\*和没有加\*的区别在于一个是传递指针对象，一个是传递值对象。
@@ -40,13 +40,13 @@ func (poem Poem) publish() {
 
 ```golang
 poem := &Poem{}
-	poem.Author = "Heine"
-	poem2 := &Poem{Author: "Heine"}
-	poem3 := new(Poem)
-	poem3.Author = "Heine"
-	poem4 := Poem{}
-	poem4.Author = "Heine"
-	poem5 := Poem{Author: "Heine"}
+    poem.Author = "Heine"
+    poem2 := &Poem{Author: "Heine"}
+    poem3 := new(Poem)
+    poem3.Author = "Heine"
+    poem4 := Poem{}
+    poem4.Author = "Heine"
+    poem5 := Poem{Author: "Heine"}
 ```
 实例化的时候可以初始化属性值，如果没有指明则默认为系统默认值。加&符号和new的是指针对象，没有的则是值对象，这点和php、java不一致，在传递对象的时候要根据实际情况来决定是要传递指针还是值。
 
