@@ -4,8 +4,8 @@ date: 2016-08-03 16:23:43
 tags: golang
 categories: golang
 ---
-<!-- more -->
 golang中并没有明确的面向对象的说法，实在要扯上的话，可以将struct比作其它语言中的class。
+<!-- more -->
 
 ## 类声明
 ```golang

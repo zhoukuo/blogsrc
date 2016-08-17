@@ -4,8 +4,9 @@ date: 2016-08-10 13:25:06
 tags: 文化
 categories: 文化
 ---
-<!-- more -->
 > Pascal是大学时代的入门语言，也是造就一代Borland传奇Delphi的经典。作为Pascal之父，Niklaus Wirth率先提出了结构化程序设计思想，并凭借突出的贡献，获得1984年图灵奖。
+<!-- more -->
+
 1967年，当Pascal之父Niklaus Wirth（尼古拉斯·沃斯）编写最后一条Pascal编译器的代码后，他按照惯例为自己的这门语言取了一个数学家的名字——Pascal。这是为了纪念法国著名数学家和物理学家Blaise Pascal（布莱兹·帕斯卡）。
 
 ![数学家和物理学家Blaise Pascal和他发明的计算机](http://images.51cto.com/files/uploadimg/20091222/023546994.gif)
@@ -45,5 +46,6 @@ Pascal语言可以被方便地用于描述各种算法与数据结构。尤其�
 另外，作为教学语言被设计的Pascal在商业上也取得了辉煌的成绩。上世纪80年代，Delphi与C#之父Anders Hejlsberg在Borland公司先后设计推出了Turbo Pascal和Delphi。造就了当年的Borland传奇。
 
 1971年，Niklaus Wirth基于自己的开发程序设计语言和编程的实践经验，Wirth首次提出了“结构化程序设计”(Structured Programming)的概念。Wirth提出的这种结构化程序设计方法又称为“自顶向下”或“逐步求精”法，在程序设计领域引发了一场革命，成为其中的一种标准，尤其在后来发展起来的软件工程中获得广泛应用。
+
 Pascal的成功和结构化程序设计思想带来的巨大影响，并没有停止Wirth继续创造性的研究与开发工作。1970年代中期，为适应并发程序设计的需要，Wirth又成功开发了获得广泛应用的Modula语言。后来，参考Alto的经验，他还设计开发了Lilith个人计算机系统。Wirth的学术著作很多，著名的包括《系统程序设计导论》、《算法+数据结构=程序》。除了程序设计语言之外，Wirth在其他方面也有许多创造，如扩充了著名的巴科斯范式，发明了语法图等。凭借突出的个人成就，Niklaus Wirth于1984年获得图灵奖。
 <完>

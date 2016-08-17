@@ -4,8 +4,8 @@ date: 2016-08-11 11:20:39
 tags: golang
 categories: golang
 ---
-<!-- more -->
 这几天认真玩起了 Go。所谓认真玩，就是拿 Go 写点程序，前后大约两千行吧。
+<!-- more -->
 
 据说 Go 的最佳开发平台是 Mac OS ，我没有。其次应该是 Linux 。Windows 版还没全部搞定，但是也可以用了。如果你用 google 搜索，很容易去到一个叫 go-windows 的开源项目上。千万别上当，这是个废弃的项目。如果你用这个，很多库都没有，而且语法也是老的。我在 Windows 下甚至不能正确链接自己写的多个 package 。活跃的 Windows 版是 gomingw ，对于 Windows 用户，装一个 mingw32 以后就可以开始玩了。
 就三天来实战经历，我喜欢上这门新语言有如下原因：

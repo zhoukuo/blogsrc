@@ -4,8 +4,9 @@ date: 2016-08-14 19:17:37
 tags: golang
 categories: golang
 ---
-<!-- more -->
 Golang内置了以下这些基础类型：
+<!-- more -->
+
 * 布尔类型：bool
 * 整型：int8、byte、int16、int、uint、uintptr等
 * 浮点类型：float32、float64
@@ -13,6 +14,7 @@ Golang内置了以下这些基础类型：
 * 字符串：string
 * 字符类型：byte、rune
 * 错误类型：error
+
 ## 布尔类型
 Golang的布尔类型和其它语言基本一致：
 

@@ -4,8 +4,9 @@ date: 2016-08-09 14:25:21
 tags: git
 categories: git
 ---
-<!-- more -->
 本文介绍我一年前在自己的项目（包括工作项目和私人项目）中引入的git分支模型，这个模型很成功。
+<!-- more -->
+
 ![](http://segmentfault.com/img/bVbYDS)
 
 ## 主要分支

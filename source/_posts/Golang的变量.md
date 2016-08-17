@@ -4,8 +4,8 @@ date: 2016-08-14 16:21:56
 tags: golang
 categories: golang
 ---
-<!-- more -->
 Golang变量与C接近，但具备更大的灵活性。
+<!-- more -->
 
 ## 变量声明
 Golang的变量声明方式与C/C++语言有明显的不同

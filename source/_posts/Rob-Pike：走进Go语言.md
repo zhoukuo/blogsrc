@@ -4,8 +4,9 @@ date: 2016-08-11 22:32:48
 tags: golang
 categories: golang
 ---
-<!-- more -->
 > 本文整理自Google首席工程师Rob Pike的演讲，主要讲述的了Go的部分设计原理和初衷，也有提到Go语言在Google内外的应用现状。但本文的目的更多的是关于软件工程而不是编程语言的设计，更准确地说是如何设计编程语言来帮助软件工程。
+<!-- more -->
+
 ![](http://static.oschina.net/uploads/img/201410/15150257_6HPb.jpg)
 
 ## 序言：关于Go
