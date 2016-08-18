@@ -2,7 +2,6 @@
 title: Golang的常量
 date: 2016-08-14 17:58:23
 tags: golang
-categories: golang
 ---
 在Golang中，常量可以是数字类型、布尔类型、字符串类型等。
 <!-- more -->

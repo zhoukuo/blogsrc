@@ -2,10 +2,8 @@
 title: 'C++之父Bjarne Stroustrup：面向对象的进化与实现'
 date: 2016-08-10 13:42:47
 tags: 文化
-categories: 文化
 ---
 如果Bjarne Stroustrup从A&M大学工程学院离职，他的简历上只需一句话就会有一群顶级软件公司向他抛出橄榄枝：<!-- more -->“Bjarne Stroustrup，C++编程语言的发明者”。
-
 
 Bjarne 1950年出生在丹麦，对于软件开发界，丹麦不仅是一个童话王国，还是群星闪耀大师频出的地方。Delphi和C#之父Anders、Ruby on Rails创始人DHH都是丹麦人。1975年，Bjane获得丹麦奥胡斯大学的数学和计算机科学硕士学位，又于1979年获得英国剑桥大学的计算机科学博士学位。
 

@@ -2,7 +2,6 @@
 title: Go 语言初步
 date: 2016-08-11 11:20:39
 tags: golang
-categories: golang
 ---
 这几天认真玩起了 Go。所谓认真玩，就是拿 Go 写点程序，前后大约两千行吧。
 <!-- more -->

@@ -2,7 +2,6 @@
 title: Golang的基础类型
 date: 2016-08-14 19:17:37
 tags: golang
-categories: golang
 ---
 Golang内置了以下这些基础类型：
 <!-- more -->

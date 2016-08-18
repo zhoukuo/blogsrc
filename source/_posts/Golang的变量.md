@@ -2,7 +2,6 @@
 title: Golang的变量
 date: 2016-08-14 16:21:56
 tags: golang
-categories: golang
 ---
 Golang变量与C接近，但具备更大的灵活性。
 <!-- more -->

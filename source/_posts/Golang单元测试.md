@@ -2,7 +2,6 @@
 title: Golang单元测试
 date: 2016-08-04 10:10:30
 tags: [golang,测试]
-categories: golang
 ---
 一般为了保证整个系统的稳定性，通常都需要编写大量的单元测试，诸如像java的junit，php的phpunit等都提供了类似的功能。<!-- more -->golang中的testing包提供了这个测试的功能，结合go test工具搞起来就很方便了。
 

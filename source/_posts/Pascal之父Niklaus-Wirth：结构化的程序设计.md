@@ -2,7 +2,6 @@
 title: Pascal之父Niklaus Wirth：结构化的程序设计
 date: 2016-08-10 13:25:06
 tags: 文化
-categories: 文化
 ---
 Pascal是大学时代的入门语言，也是造就一代Borland传奇Delphi的经典。<!-- more -->作为Pascal之父，Niklaus Wirth率先提出了结构化程序设计思想，并凭借突出的贡献，获得1984年图灵奖。
 
