@@ -4,8 +4,7 @@ date: 2016-08-11 16:00:34
 tags: c
 categories: c
 ---
-周末出差，去另一个城市给公司的一个项目解决点问题。回程去机场的路上，我用手机上 google reader 打发时间。第一眼就看到孟岩大大新的一篇：[Linux之父话糙理不糙](http://blog.csdn.net/myan/archive/2007/09/08/1777230.aspx) 。主题是 C 与 C++ 的语言之争。转到刘江的 blog 下读完了 [Linux之父炮轰C++：糟糕程序员的垃圾语言](http://blog.csdn.net/turingbook/archive/2007/09/07/1775488.aspx) 大呼过瘾。立刻把链接短信发给了几个朋友。
-<!-- more -->
+周末出差，去另一个城市给公司的一个项目解决点问题。回程去机场的路上，我用手机上 google reader 打发时间。<!-- more -->第一眼就看到孟岩大大新的一篇：[Linux之父话糙理不糙](http://blog.csdn.net/myan/archive/2007/09/08/1777230.aspx) 。主题是 C 与 C++ 的语言之争。转到刘江的 blog 下读完了 [Linux之父炮轰C++：糟糕程序员的垃圾语言](http://blog.csdn.net/turingbook/archive/2007/09/07/1775488.aspx) 大呼过瘾。立刻把链接短信发给了几个朋友。
 
 语言之争永远是火药味十足的话题。尤其是 C 和 C++ 的目标市场又有很高的重合性，C++ 程序员往往对C++ 其有着宗教般的虔诚。我想，今天我在自己的 blog 上继续这个战争，一定会换来更多的骂名。只不过这次 Linus 几句话真是说到我心坎里去了，不喊出来会憋坏的 :D
 

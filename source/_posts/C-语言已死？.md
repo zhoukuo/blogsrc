@@ -4,8 +4,7 @@ date: 2016-08-11 13:51:02
 tags: c
 categories: c
 ---
-今天俗一把，掺乎近期网上最热门的这个话题：[C语言已经死了，5个需要忘却它的理由](http://developer.51cto.com/art/200612/36506.htm)。大家[驳来](http://blog.csdn.net/xushiweizh/archive/2007/01/07/1476422.aspx)、[驳去](http://blog.csdn.net/Analyst/archive/2007/01/08/1476994.aspx) 的。这的确是一个[不值得一驳](http://blog.csdn.net/Raptor/archive/2007/01/10/1478831.aspx)的问题，我这里也没打算驳斥那些观点。只是写点别的：
-<!-- more -->
+今天俗一把，掺乎近期网上最热门的这个话题：[C语言已经死了，5个需要忘却它的理由](http://developer.51cto.com/art/200612/36506.htm)。大家[驳来](http://blog.csdn.net/xushiweizh/archive/2007/01/07/1476422.aspx)、[驳去](http://blog.csdn.net/Analyst/archive/2007/01/08/1476994.aspx) 的。<!-- more -->这的确是一个[不值得一驳](http://blog.csdn.net/Raptor/archive/2007/01/10/1478831.aspx)的问题，我这里也没打算驳斥那些观点。只是写点别的：
 
 C 并不是对机器模型的完整抽象，就是说把 C 作为一种 portable assembly language 是有缺陷的。即使是做底层，光有 C 也是不够的 (IMHO) 。
 
