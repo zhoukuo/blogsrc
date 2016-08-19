@@ -1,0 +1,54 @@
+menu:
+  Home: /
+  Archives: /archives
+  About: /about
+
+widgets:
+- search
+- recent_posts
+- tag
+- tagcloud
+- links
+
+#### Links
+links:
+  许式伟: http://blog.csdn.net/xushiweizh/
+  云　风: http://blog.codingnow.com/
+  阮一峰: http://www.ruanyifeng.com/blog/
+  王　垠: http://www.yinwang.org/
+  Go下载: http://www.golangtc.com/download 
+  Go手册: http://godoc.ml/
+  Go圣经: https://docs.ruanjiadeng.com/gopl-zh/
+
+excerpt_link: Read More ›
+
+#### Image
+imglogo:
+  enable: true         ## 是否开启网站的logo，标题左边的logo。
+  src: img/logo.png   ## 图片放在`/concise/source/imgs`目录下,使用.svg和.png格式的图片.
+favicon: img/favicon.ico   ## 浏览器标签上显示的图片,放在`/concise/source/imgs`下.
+
+author_img_enable: true     ## 是否开启作者头像,左下角会旋转头像.
+author_img: imgs/author.jpg ## 作者头像的路径,以../comcise/source/文件夹为根路径,如果放在imgs文件夹下,格式如本人范例
+
+
+twitter:
+  username:
+  show_replies: false
+  tweet_count: 5
+
+addthis:
+  enable: false
+  pubid:
+  facebook: true
+  twitter: true
+  google: true
+  pinterest: true
+
+google_analytics:
+
+duoshuo_enable: true    ##不想用，改为false即可
+duoshuo_shortname: zhoukuo
+
+#### Fancybox   ##图片效果
+fancybox: true 
