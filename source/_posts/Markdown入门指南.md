@@ -12,10 +12,10 @@ tags: markdown
 
 ## Markdown 官方文档
 
-> 这里可以看到官方的 Markdown 语法规则文档，当然，后文我也会用自己的方式阐述这些语法的具体用法。
+这里可以看到官方的 Markdown 语法规则文档，当然，后文我也会用自己的方式阐述这些语法的具体用法。
 
-> * [创始人 John Gruber 的 Markdown 语法说明](http://daringfireball.net/projects/markdown/syntax)
-> * [Markdown 中文版语法说明](http://wowubuntu.com/markdown/\#list)
+* [创始人 John Gruber 的 Markdown 语法说明](http://daringfireball.net/projects/markdown/syntax)
+* [Markdown 中文版语法说明](http://wowubuntu.com/markdown/\#list)
 
 ## 使用 Markdown 的优点
 
