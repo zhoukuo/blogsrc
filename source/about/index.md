@@ -3,7 +3,7 @@ title: about
 date: 2016-08-16 10:42:06
 ---
 姓　名：周　阔
-英文名：Dennis Zhou (为纪念已故的C语言之父Dennis Ritchie)
+英文名：Dennis Zhou
 星　座：金牛座
 邮　箱：187033848 at qq dot com
 Github：https://github.com/zhoukuo
