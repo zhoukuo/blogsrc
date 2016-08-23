@@ -97,8 +97,9 @@ public class AnyRAChannelRule extends ArgumentMatcher<RAChannelRule> {
 * 正向测试(Postive Test)
 * 逆向测试(Negtive Test)
 
-## 测试代码和测试数据分离
+## 确保测试代码和测试数据分离
 软件测试往往需要测试大量的数据集，这样才能保证软件的稳定性和鲁棒性。JUnit没有提供方便传递测试参数的机制，所以，针对每个测试数据集，都需要单独写代码进行测试。这样浪费很多时间和精力重复写测试代码，它们只是参数不一样，测试逻辑完全一样。同时，测试代码和测试数据没有分离，为今后的维护埋下隐患。
+
 TestNG在参数化测试方面，比JUnit有较大的优势。提供了两种传递参数的方式。@DataProvider方式使代码和测试数据分离，方便扩展和维护，并能够提供比较复杂的参数，方便产生具有一定规律的测试数据集。
 ```java
 @DataProvider(name = "certStatus")
@@ -130,6 +131,7 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exce
 
 ## 保持测试的独立性
 单元测试即类 (Class) 的测试. 一个 “测试类” 应该只对应于一个 “被测类”, 并且 “被测类” 的行为应该被隔离测试. 必须谨慎避免使用单元测试框架来测试整个程序的工作流, 这样的测试即低效又难维护. 工作流测试有它自己的地盘, 但它绝不是单元测试, 必须单独建立和执行.
+
 为了保证测试稳定可靠且便于维护, 测试用例之间决不能有相互依赖, 也不能依赖执行的先后次序.
 
 ## 测试方法
