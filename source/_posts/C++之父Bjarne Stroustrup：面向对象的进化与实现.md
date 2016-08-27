@@ -1,6 +1,6 @@
 ---
 title: 'C++之父Bjarne Stroustrup：面向对象的进化与实现'
-date: 2016-08-10 13:42:47
+date: 2016-07-29 13:42:47
 tags: 文化
 ---
 如果Bjarne Stroustrup从A&M大学工程学院离职，他的简历上只需一句话就会有一群顶级软件公司向他抛出橄榄枝：<!-- more -->“Bjarne Stroustrup，C++编程语言的发明者”。

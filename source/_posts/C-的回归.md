@@ -1,6 +1,6 @@
 ---
 title: C 的回归
-date: 2016-08-11 16:00:34
+date: 2016-07-23 16:00:34
 tags: c
 ---
 周末出差，去另一个城市给公司的一个项目解决点问题。回程去机场的路上，我用手机上 google reader 打发时间。<!-- more -->第一眼就看到孟岩大大新的一篇：[Linux之父话糙理不糙](http://blog.csdn.net/myan/archive/2007/09/08/1777230.aspx) 。主题是 C 与 C++ 的语言之争。转到刘江的 blog 下读完了 [Linux之父炮轰C++：糟糕程序员的垃圾语言](http://blog.csdn.net/turingbook/archive/2007/09/07/1775488.aspx) 大呼过瘾。立刻把链接短信发给了几个朋友。

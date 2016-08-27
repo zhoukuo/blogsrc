@@ -1,6 +1,6 @@
 ---
 title: Golang的复合类型
-date: 2016-08-15 21:22:46
+date: 2016-08-09 21:22:46
 tags: golang
 ---
 Golang支持以下这些复合类型：
