@@ -132,4 +132,4 @@ $ git branch -d hotfix-1.2.1
 <完>
 
 **原文** [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
-**翻译** [SegmentFault](https://segmentfault.com/a/1190000000434973)
+**翻译** [开源中国社区](http://www.oschina.net/translate/a-successful-git-branching-model)
