@@ -1,45 +1,15 @@
 ---
 title: 单元测试编写指南-Java版
-date: 2016-08-26 17:36:18
+date: 2016-08-25 17:36:18
 tags: [测试,java]
+author: zhoukuo
 ---
 单元测试又称为模块测试，是对软件中最小可测单元进行检查和验证。单元测试需要掌握内部设计和编码的细节知识，往往需要开发测试驱动模块和桩模块来辅助完成，一般由开发人员来执行测试。
 <!--more-->
-
-本文重点介绍了在Java项目中使用 **TestNG** 和 **PowerMock** 编写单元测试所必须掌握的知识，帮助大家快速了解如何进行单元测试的编写。
+本文假设读者已经了解单元测试的基本概念，但对如何实施不了解，因此本文重点介绍了在Java项目中使用 **TestNG** 和 **PowerMock** 编写单元测试所必须掌握的知识，帮助大家快速了解如何进行单元测试的编写。
 
 ## 测试工具
 单元测试离不开测试框架和Mock工具，目前Java社区主流的测试框架主要包括JUnit和TestNG，而Mock工具主要是EasyMock、Mockito和PowerMock，通过对比分析，我们最终选择 TestNG + PowerMock 作为我们的测试工具。
-
-### TestNG 简介
-TestNG是一个测试框架，其灵感来自JUnit和NUnit的，但引入了一些新的功能，使其功能更强大，使用更方便，尤其是测试分组、测试参数化等特性使测试更加灵活高效。
-
-### PowerMockkito 简介
-在做单元测试的时候，我们会发现我们要测试的方法会引用很多外部依赖的对象，比如：（访问数据库，发送邮件，网络通讯，远程服务, 文件系统等等）。 而我们没法控制这些外部依赖的对象，为了解决这个问题，我们就需要用到Mock工具来模拟这些外部依赖的对象，来完成单元测试。
-
-![](/img/powermock.png)
-
-PowerMockito是PowerMock框架的一部分，它是在Mockito框架上的扩展，通过提供定制的类加载器以及一些字节码篡改技巧的应用，PowerMock 实现了对静态方法、构造方法、私有方法以及 Final 方法的模拟支持，对静态初始化过程的移除等强大的功能。因为 PowerMock 在扩展功能时完全采用和被扩展的框架相同的 API, 熟悉 PowerMock 所支持的模拟框架的开发者会发现 PowerMock 非常容易上手。PowerMock 的目的就是在当前已经被大家所熟悉的接口上通过添加极少的方法和注释来实现额外的功能。
-
-### 模拟(Mock)有哪些关键点?
-
-在谈到模拟时，你只需关心三样东西: 方法模拟，设定预期结果，验证结果。
-
-**方法模拟(Stubbing)**
-方法模拟就是设定与此方法交互时应该如何响应。当谈到方法模拟方法，通常你有一系列的选择，或许你希望返回一个指定的值，抛出一个异常什么都不做。
-
-这咋一听起来工作量很大，但通常并非这样。许多mocking框架的一个重要功能就是你不需要提供 stub 的实体方法，也不用在执行测试期间stub那些未被调用的方法或者未使用的属性。
-
-**设置预期**
-模拟测试的一个关键的特性就是你能够告诉它你预期的结果。例如，你可以期望一个特定的函数被准确的调用3次，或不被调用，或调用至少两次但不超过5次，或者需要满足特定类型的参数、特定值和以上任意的组合的调用。可能性是无穷的。
-
-通过设定预期结果告诉fake你期望发生的事情。因为它是一个模拟测试，所以实际上什么也没发生。但是，对于被测试的类来说，它并无法区分这种情况。所以fake能够调用函数并让它做它该做的。
-值得注意的是，大多数模拟框架除了可以创建接口的模拟测试外，还可以创建公有类的模拟测试。
-
-**验证结果**
-设置预期和验证预期是同时进行的。设置预期在调用测试类的函数之前完成，验证预期则在它之后。所以，首先你设定好预期结果，然后去验证你的预期结果是否正确。
-
-在一个单元测试中，如果你设定的预期没有得到满足，那么这个单元测试就是失败了。例如，你设置预期结果是 ILoginService.login函数必须用特定的用户名和密码被调用一次，但是在测试中它并没有被调用，所以测试失败。
 
 ## 环境部署
 开发环境不同，环境部署的方法也不同，本文以Eclipse为例，介绍如何部署环境。
@@ -56,8 +26,10 @@ PowerMockito是PowerMock框架的一部分，它是在Mockito框架上的扩展�
 
 ## TestNG篇
 
-### 第一个单元测试
+### TestNG 简介
+TestNG是一个测试框架，其灵感来自JUnit和NUnit的，但引入了一些新的功能，使其功能更强大，使用更方便，尤其是测试分组、测试参数化等特性使测试更加灵活高效。
 
+### 第一个单元测试
 以下是一个最简单的单元测试代码：
 
 ```java
@@ -113,7 +85,7 @@ TestNG通过注解提供各种功能支持，所以了解TestNG的基本注解�
 * assertFalse
 
 从前面的例子，我们可以了解断言的用法。
-assertTrue、assertFalse 仅在验证方法返回Boolean值时使用，其它情况不建议使用。
+需要注意的是，assertTrue、assertFalse 仅在验证方法返回Boolean值时使用，其它情况不建议使用。
 
 ### 异常测试
 在单元测试时，除了正常情况需要测试意外，异常情况也需要测试，与正常情况的验证方式不同，TestNG通过注解对异常预期进行验证，示例如下：
@@ -205,9 +177,7 @@ public void testValidate(){
 }
 ```
 
-但有了PowerMockito，访问变得简单了，只需要调用一个方法就可以了，其实它只是把上面的实现封装了一下而已。
-
-PowerMockito内置了WhiteBox类，包含了调用私有方法的接口，下面的例子说明了如何测试私有方法validate。
+但有了PowerMockito，访问变得简单了，PowerMockito内置了WhiteBox类，包含了调用私有方法的接口，下面的例子说明了如何测试私有方法validate。
 
 ```java
 import org.powermock.reflect.Whitebox;
@@ -222,6 +192,32 @@ public void testValidate(){
 　
 
 ## PowerMockito 篇
+
+### PowerMockito 简介
+在做单元测试的时候，我们会发现我们要测试的方法会引用很多外部依赖的对象，比如：（访问数据库，发送邮件，网络通讯，远程服务, 文件系统等等）。 而我们没法控制这些外部依赖的对象，为了解决这个问题，我们就需要用到Mock工具来模拟这些外部依赖的对象，来完成单元测试。
+
+![](/img/powermock.png)
+
+PowerMockito是PowerMock框架的一部分，它是在Mockito框架上的扩展，通过提供定制的类加载器以及一些字节码篡改技巧的应用，PowerMock 实现了对静态方法、构造方法、私有方法以及 Final 方法的模拟支持，对静态初始化过程的移除等强大的功能。因为 PowerMock 在扩展功能时完全采用和被扩展的框架相同的 API, 熟悉 PowerMock 所支持的模拟框架的开发者会发现 PowerMock 非常容易上手。PowerMock 的目的就是在当前已经被大家所熟悉的接口上通过添加极少的方法和注释来实现额外的功能。
+
+### 模拟(Mock)有哪些关键点?
+
+在谈到模拟时，你只需关心三样东西: 方法模拟，设定预期，验证结果。
+
+**方法模拟(stub)**
+方法模拟就是给特定的方法调用返回固定值，在官方说法中称为stub，当谈到方法模拟方法，通常你有一系列的选择，或许你希望返回一个指定的值，抛出一个异常或者什么都不做。
+
+这咋一听起来工作量很大，但通常并非这样。许多mocking框架的一个重要功能就是你不需要提供 stub 的实体方法，也不用在执行测试期间stub那些未被调用的方法或者未使用的属性。
+
+**设置预期**
+模拟测试的一个关键的特性就是你能够告诉它你预期的结果。例如，你可以期望一个特定的函数被准确的调用3次，或不被调用，或调用至少两次但不超过5次，或者需要满足特定类型的参数、特定值和以上任意的组合的调用。可能性是无穷的。
+
+通过设定预期结果，说明你期望发生的事情。因为它是一个模拟测试，所以实际上什么也没发生。但是，对于被测试的类来说，它并无法区分这种情况。所以测试方法能够调用函数并让它做它该做的。
+
+**验证结果**
+设置预期和验证预期是同时进行的。设置预期在调用测试类的函数之前完成，验证预期则在它之后。所以，首先你设定好预期结果，然后去验证你的预期结果是否正确。
+
+在一个单元测试中，如果你设定的预期没有得到满足，那么这个单元测试就是失败了。
 
 ### 一个完整的带有Mock对象的单元测试
 
@@ -295,7 +291,8 @@ public class MockitoExample2 {
 }
 ```
 
-### 方法模拟(stubbing)
+### 方法模拟(stub)
+
 
 * 模拟有返回值的方法
 ```java
@@ -340,14 +337,65 @@ PowerMockito.whenNew(RAServiceImpl.class).withNoArguments().thenReturn(mockedRAS
 PowerMockito.doCallRealMethod().when(mockedSut).excute(req);
 ```
 
-### 方法验证
-* 是否调用
-* 调用次数
-* 执行顺序
-* 自定义类对象
-  验证对象中每个属性
-  重载equals()方法
+默认情况下，对于所有有返回值且没有stub过的方法，mockito会返回相应的默认值。对于内置类型会返回默认值，如int会返回0，布尔值返回false。对于其他type会返回null。这里一个重要概念就是： mock对象会覆盖整个被mock的对象，因此没有stub的方法只能返回默认值。重复stub两次,则以第二次为准。如下将返回"second"：
+```java
+    when(mockedList.get(0)).thenReturn("first");
+    when(mockedList.get(0)).thenReturn("second");
+```
 
+如果是下面这种形式，则表示第一次调用时返回“first”，第二次调用时返回“second”，可以写n多个。如果实际调用的次数超过了stub过的次数，则会一直返回最后一次stub的值。
+```java
+    when(mockedList.get(0)).thenReturn("first").thenReturn("second");
+```
+
+### 方法验证
+
+* 是否调用
+```java
+verify(mockedList).add("added");
+```
+
+* 调用次数
+```java
+verify(mockedList, times(1)).add("once");
+verify(mockedList, atLeastOnce()).add("twice");
+verify(mockedList, atLeast(1)).add("twice");
+verify(mockedList, atMost(5)).add("twice");
+verify(mockedList, never()).add("twice");
+verify(mockedList, times(0)).add("once");
+```
+
+* 执行顺序
+```java
+@Test  
+public void verification_in_order(){  
+    List list = mock(List.class);  
+    List list2 = mock(List.class);  
+    list.add(1);  
+    list2.add("hello");  
+    list.add(2);  
+    list2.add("world");  
+    //将需要排序的mock对象放入InOrder  
+    InOrder inOrder = inOrder(list,list2);  
+    //下面的代码不能颠倒顺序，验证执行顺序  
+    inOrder.verify(list).add(1);  
+    inOrder.verify(list2).add("hello");  
+    inOrder.verify(list).add(2);  
+    inOrder.verify(list2).add("world");  
+}
+```
+
+* 自定义类对象
+  验证实际值是否符合预期值，我们通常用assertEquals(actual, expected)方法，这个方法会调用actual类型(actual和expected的类型相同)的equals()方法进行比较，因此，我们自己定义的类需要重载equals()方法后，才能通过assertEquals()进行验证。否则只能分别验证对象的每个属性。
+  需要注意的是，直接使用assertEquals(actual, expected)方法永远返回false。
+```java
+//未重载equals()前
+assertEquals(actually.EXCUTE_RESULT_KEY),expected.EXCUTE_RESULT_KEY);
+assertEquals(actually.ERROR_CODE), expectedE.RROR_CODE);
+assertEquals(actually.ENVSN), expected.ENVSN));
+//重载equals()后
+assertEquals(actually, expected);
+```
 
 ### 参数匹配器(Argument Matcher)
 PowerMockito在模拟方法时，如果参数的值不匹配，那么这个模拟是不会生效的，如果只是模拟值类型的参数，而且这个值是确定的，我们只需要提供对应的值就可以了，但是当我们模拟的是对象，或者是个不确定的值(如当前日期时间)，我们就只能通过匹配器来进行适配了。
@@ -374,14 +422,27 @@ public class AnyCertUpdateBU extends ArgumentMatcher<CertUpdateBU> {
 
 自定义匹配器其实就是一个包含一个返回boolean值的方法的类，它从ArgumentMatcher<>模板类继承。在使用时我们只需要**修改类名**和**实例化ArgumentMatcher<>**就可以了。
 
-需要注意的是：如果使用参数匹配器，那么**所有的参数都要使用参数匹配器**，不管是stubbing还是verify的时候都一样。
+需要注意的是：如果使用参数匹配器，那么**所有的参数都要使用参数匹配器**，不管是stub还是verify的时候都一样。
 
+### 重置Mock
+有时，我们想要清除所有的互动和预设，可以通过重置Mock对象来实现。
+```java
+@Test  
+public void reset_mock(){  
+    List list = mock(List.class);  
+    when(list.size()).thenReturn(10);  
+    list.add(1);
+    assertEquals(10,list.size());  
+    //重置mock，清除所有的互动和预设  
+    reset(list);
+    Assert.assertEquals(0,list.size());
+```
 　
 
 ## 测试用例设计篇
 单元测试属于白盒测试，因此用例设计也要遵守白盒测试设计的原则和方法。
 
-### 用例的设计原则
+### 用例设计原则
 
 * 保证一个模块中的所有独立路径至少被使用一次
 * 对所有逻辑值均需测试 true 和 false

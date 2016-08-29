@@ -1,9 +1,9 @@
 ---
 title: 单元测试规范-Java版
-date: 2016-08-25 10:22:46
+date: 2016-08-26 10:22:46
 tags: [测试,java]
 ---
-实施单元测试的时候, 如果没有一份经过实践证明的详细规范, 很难掌握测试的 “度”, 范围太小施展不开, 太大又侵犯 “别人的” 地盘. 上帝的归上帝, 凯撒的归凯撒, 给单元测试念念紧箍咒不见得是件坏事, 反而更有利于发挥单元测试的威力, 为代码重构和提高代码质量提供保障。
+实施单元测试的时候, 如果没有一份经过实践证明的详细规范, 很难掌握测试的 “度”, 范围太小施展不开, 太大又侵犯 “别人的” 地盘。上帝的归上帝, 凯撒的归凯撒, 给单元测试念念紧箍咒不见得是件坏事, 反而更有利于发挥单元测试的威力, 为代码重构和提高代码质量提供保障。
 <!--more-->
 ## 单元测试框架和工具
 Java单元测试框架主要包括 JUnit 和 TestNG，相比 JUnit，TestNG 支持分组，参数化等更多的特性，因此选择 TestNG 作为我们的单元测试框架。
@@ -26,7 +26,7 @@ Java单元测试框架主要包括 JUnit 和 TestNG，相比 JUnit，TestNG 支�
 把测试代码从功能代码目录中独立出来, 通常是创建一个和 src 目录同级的 test 目录，例如：产品代码所在路径为 css/src/main/，则测试代码所在路径为 css/src/test/。
 这么做保证功能代码和测试代码隔离, 目录结构清晰, 并且发布源码的时候更容易排除测试用例。
 
-## 合理的命名测试用例
+## 合理的命名测试
 ### 包名
 测试类所在的包名在被测产品包名基础上增加.test后缀，如：被测类包名：cn.org.bjca.css.domain.cert.impl，测试类包名：cn.org.bjca.css.domain.cert.impl.test。
 
@@ -38,15 +38,35 @@ Java单元测试框架主要包括 JUnit 和 TestNG，相比 JUnit，TestNG 支�
 
 ### 被测类对象命名
 * 正常情况下被测类对象统一命名 为sut(system under test)
-* 被 spy 的对象统一命名为 spySut
-* 被 mock 的对象统一命名为 mockSut
+```java
+@InjectMocks
+private UpdateGetNewEnvsnImpl sut;
+```
 
-### 自定义参数匹配器命名
-自定义参数匹配器命名规则为 Any+类名，如：需要定义匹配器的类为 CertUpdateBU，则匹配器的名称为 AnyCertUpdateBU。
+* 被 spy 的对象统一命名为 spySut
+```java
+UpdateGetNewEnvsnImpl spySut = PowerMockito.spy(sut);
+```
+
+* 被 mock 的对象统一命名为 mockedXXX
+```java
+@Mock
+private IRAConfigService mockedRAConfigService;
+```
 
 ### 变量命名
 * 实际返回值无论什么类型，统一命名为：actually
 * 期望值无论什么类型，统一命名为：expected
+
+示例如下：
+```java
+@Test
+public void TestJudgeStatus(CertStatus certStatus, boolean expected) {
+    when(bu.getCertStatus()).thenReturn(certStatus);
+    boolean actually = (Boolean) Whitebox.invokeMethod(sut, "judgeStatus", bu);
+    assertEquals(actually, expected);
+}
+```
 
 ## 使用显式断言
 应该总是优先使用 assertEquals(a, b) 而不是 assertTrue(a == b) , 因为前者会给出更有意义的测试失败信息。
@@ -55,44 +75,15 @@ Java单元测试框架主要包括 JUnit 和 TestNG，相比 JUnit，TestNG 支�
 * 为每个测试方法、每组测试用例添加注释，注释统一使用中文
 * 对特殊情况注释：如测试方法中期望抛出异常，无验证逻辑
 
-## 覆盖率
-
-* 分支覆盖要求达到100%
-分支覆盖指分支语句取真值和取假值各一次，分支语句是程序控制流的重要处理语句，在不同流向上测试可以验证这些控制流向的正确性。分支覆盖使这些分支产生的输出都得到验证，提高测试的充分性。
-
-* 覆盖边界值
-确保参数边界值均被覆盖。 对于数字, 测试负数, 0, 正数, 最小值, 最大值, NaN (非数字), 无穷大等。对于字符串, 测试空字符串, 单字符, 非 ASCII 字符串, 多字节字符串等。对于集合类型, 测试空, 1, 第一个, 最后一个等. 对于日期, 测试 1月1号, 2月29号, 12月31号等。被测试的类本身也会暗示一些特定情况下的边界值。 要点是尽可能彻底的测试这些边界值, 因为它们都是主要 “疑犯”。
-
-* 错误处理测试
-错误处理路径是可能引发错误处理的路径及进行错误处理的路径，错误出现时错误处理程序重新安排执行路线，或通知用户处理，或干脆停止执行使程序进入一种安全等待状态。测试人员应意识到，每一行程序代码都可能执行到，不能自己认为错误发生的概率很小而不去进行测试。
-
-* 提供反向测试
-反向测试是指刻意编写问题代码, 来验证鲁棒性和能否正确的处理错误.
-假设如下方法的参数如果传进去的是负数, 会立马抛出异常:
-
-```java
-void setLength(double length) throws IllegalArgumentException
-```
+## 用例设计
+* 保证一个模块中的所有独立路径至少被执行一次
+* 对所有逻辑值均需测试 true 和 false
+* 使所有判定中各条件判断结果的所有组合至少出现一次
 
 ## 参数匹配器
 Mockito 内置了一些通用的参数匹配器，如 anyObject, anyString, anyInt 等，通常想要匹配我们自己定义的类也很简单，使用anyObject()并转换成我们自己的类，像下面这样：
 ```java
 Mockito.doNothing().when(mockedCertUpdateService).update((CertUpdateBU)anyObject());
-```
-
-同时用户可以自定义参数匹配器，例如：
-
-```java
-package css.matcher;
-
-import org.mockito.ArgumentMatcher;
-import cn.org.bjca.css.domain.sys.raconfig.business.RAChannelRule;
-
-public class AnyRAChannelRule extends ArgumentMatcher<RAChannelRule> {
-    public boolean matches(Object list) {
-        return true;
-    }
-}
 ```
 
 ## 为测试分组
@@ -111,20 +102,14 @@ public class AnyRAChannelRule extends ArgumentMatcher<RAChannelRule> {
 @DataProvider(name = "certStatus")
 public Object[][] NewCertStatus() {
     return new Object[][] {
-        {CertStatus.NOT_ISSUE, false},
-        {CertStatus.GET_ENVSN_SUCCESS, false},
-        {CertStatus.SEND_KEY_SUCCESS, false},
-        {CertStatus.SEND_KEY_ERROR, false},
         {CertStatus.ISSUE_ERROR, false},
         {CertStatus.INSTALL_SUCCESS, false},
-        {CertStatus.INSTALL_ERROR, false},
-        {CertStatus.ISSUE_SUCCESS, true},
         {CertStatus.DOWNLOAD_SUCCESS, true},
         {CertStatus.DOWNLOAD_ERROR, true},
     };
 }
 
-@Test(groups = {"Postive"}, dataProvider = "certStatus")
+@Test(groups = {"Positive"}, dataProvider = "certStatus")
 public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exception{
     // Mock对象
     when(bu.getCertStatus()).thenReturn(certStatus);
@@ -142,9 +127,9 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exce
 
 ## 测试方法
 每个case其实都可以分为三步走，
-1. mock对象，准备测试数据。
-2. 调用目标API 
-3. 验证输出和行为。
+1. mock对象，准备测试数据和设定期望值
+2. 调用目标API
+3. 验证输出和行为
 
 所以我们可以用如下方式将3步分别放入三个分段中，这样我们一眼扫过去就可以清晰的看出一个case大体上都在干什么。
 
