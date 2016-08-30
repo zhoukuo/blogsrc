@@ -76,7 +76,7 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) {
 * 对特殊情况注释：如测试方法中期望抛出异常，无验证逻辑
 ```java
 @Test(expectedExceptions = CertServiceException.class)
-public void TestCertApplyWithResIsFailure() throws Exception{
+public void TestCertApplyWithResIsFailure() {
     // 方法模拟
     when(resp.getResponseinfo()).thenReturn(responseinfo);
     when(resp.isSuccess()).thenReturn(false);
@@ -90,12 +90,6 @@ public void TestCertApplyWithResIsFailure() throws Exception{
 * 保证一个模块中的所有独立路径至少被执行一次
 * 对所有逻辑值均需测试 true 和 false
 * 使所有判定中各条件判断结果的所有组合至少出现一次
-
-## 灵活使用参数匹配器
-Mockito 内置了一些通用的参数匹配器，如 anyObject, anyString, anyInt 等，通常想要匹配我们自己定义的类也很简单，使用anyObject()并转换成我们自己的类，像下面这样：
-```java
-Mockito.doNothing().when(mockedCertUpdateService).update((CertUpdateBU)anyObject());
-```
 
 ## 为测试分组
 
