@@ -10,7 +10,7 @@ Java单元测试框架主要包括 JUnit 和 TestNG，相比 JUnit，TestNG 支�
 目前市面上有很多 Java 的 Mock 工具，但仔细分析后发现支持私有方法、构造方法、静态方法的并不多，PowerMockito 可以很好的支持对这些方法进行 Mock，因此我们采用PowerMockito作为我们的Mock工具。
 
 ## 哪些模块需要进行单元测试
-理论上来讲，所有模块都要进行单元测试，但考虑到测试成本的因素，我们通常只针对核心业务模块实施单元测试。
+理论上来讲，所有模块都要进行单元测试，但考虑到测试成本的因素，我们可以先针对核心业务模块实施单元测试。
 具体来说，目前我们的Java项目主要采用 Spring 框架，代码主要分为三个层次：
 * Controller
 * Service
@@ -75,12 +75,12 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) {
 * 为每个测试方法、每组测试用例添加注释，注释统一使用中文
 * 对特殊情况注释：如测试方法中期望抛出异常，无验证逻辑
 
-## 用例设计
+## 保证测试的覆盖率
 * 保证一个模块中的所有独立路径至少被执行一次
 * 对所有逻辑值均需测试 true 和 false
 * 使所有判定中各条件判断结果的所有组合至少出现一次
 
-## 参数匹配器
+## 灵活使用参数匹配器
 Mockito 内置了一些通用的参数匹配器，如 anyObject, anyString, anyInt 等，通常想要匹配我们自己定义的类也很简单，使用anyObject()并转换成我们自己的类，像下面这样：
 ```java
 Mockito.doNothing().when(mockedCertUpdateService).update((CertUpdateBU)anyObject());
@@ -125,7 +125,7 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exce
 
 为了保证测试稳定可靠且便于维护, 测试用例之间决不能有相互依赖, 也不能依赖执行的先后次序。
 
-## 测试方法
+## 保持测试代码结构清晰
 每个case其实都可以分为三步走，
 1. mock对象，准备测试数据和设定期望值
 2. 调用目标API
@@ -145,8 +145,8 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exce
 }
 ```
 
-## 遇到以下情况，请增加或修改你的单元测试代码：
-
+## 保持测试代码和功能代码同步更新
+遇到以下情况，请增加或修改你的单元测试代码：
 * 上报一个新的bug
 每上报一个 bug, 都要写一个测试用例来重现这个bug (即无法通过测试), 并用它作为成功修正代码的检验标准.
 * 增加新功能
@@ -154,7 +154,8 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exce
 * 修改原有功能
 原有功能修改，必须及时更新对应的单元测试代码，以免出现测试代码与功能代码不一致的情况。
 
-## 遇到以下情况，请执行你的单元测试代码：
+## 经常执行你的测试代码
+遇到以下情况，请执行你的单元测试代码：
 * 一个单元测试方法编写完成
 * 修复了一个bug
 * 增加了新的功能
