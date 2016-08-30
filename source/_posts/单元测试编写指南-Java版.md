@@ -19,7 +19,7 @@ author: zhoukuo
    [powermock-api-mockito-common.jar](http://central.maven.org/maven2/org/powermock/powermock-api-mockito-common/1.6.5/powermock-api-mockito-common-1.6.5.jar)
    以上这些包已经包含mockito和testng，所以不需要单独下载了。
 
-2、安装
+2. 安装
    安装过程非常简单，只要把所有jar包放到classpath路径下就可以了。
 
 　
