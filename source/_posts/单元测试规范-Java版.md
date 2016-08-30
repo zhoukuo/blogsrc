@@ -114,7 +114,7 @@ public Object[][] NewCertStatus() {
     };
 }
 
-@Test(groups = {"Positive"}, dataProvider = "certStatus")
+@Test(dataProvider = "certStatus")
 public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exception{
     // Mock对象
     when(bu.getCertStatus()).thenReturn(certStatus);
@@ -139,7 +139,7 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exce
 所以我们可以用如下方式将3步分别放入三个分段中，这样我们一眼扫过去就可以清晰的看出一个case大体上都在干什么。
 
 ```java
-@Test(groups = {"Postive"}, dataProvider = "certStatus")
+@Test(dataProvider = "certStatus")
 public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exception {
     // Mock对象
     when(bu.getCertStatus()).thenReturn(certStatus);
