@@ -74,6 +74,17 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) {
 ## 注释
 * 为每个测试方法、每组测试用例添加注释，注释统一使用中文
 * 对特殊情况注释：如测试方法中期望抛出异常，无验证逻辑
+```java
+@Test(expectedExceptions = CertServiceException.class)
+public void TestCertApplyWithResIsFailure() throws Exception{
+    // 方法模拟
+    when(resp.getResponseinfo()).thenReturn(responseinfo);
+    when(resp.isSuccess()).thenReturn(false);
+    // 方法调用
+    Whitebox.invokeMethod(updateGetNewEnvsnImpl, "certApply", bu);
+    // 期望异常抛出，因此无需显式验证结果
+}
+```
 
 ## 保证测试的覆盖率
 * 保证一个模块中的所有独立路径至少被执行一次
