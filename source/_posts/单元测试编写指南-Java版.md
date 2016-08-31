@@ -490,19 +490,19 @@ if (C || D)
 
 1. 语句覆盖最弱，只需要让程序中的语句都执行一遍即可。上例中只需设计测试用例使得A=true，B=true，C=true即可。
 2. 分支覆盖又称判定覆盖：使得程序中每个判断的true分支和false分支至少经历一次，即判断的真假均曾被满足。上例需要设计测试用例使其分别满足下列条件即可
-2.1 A=true，B=true，C＝true，D=false
-2.2 A=true，B=false，C＝false，D=false
+2.1 A=true，B=true，C=true，D=false
+2.2 A=true，B=false，C=false，D=false
 
 3. 条件覆盖
-要使得每个判断中的每个条件的可能取值至少满足一次。上例中第一个判断应考虑到A=true，A=false，B=true，B=false；第二个判断应考虑到C＝true，C＝false，D=true，D=false，所以上例中可以设计测试用例满足下列条件
-3.1 A=true，B=true，C＝true，D=true
-3.2 A=false，B=false，C＝false，D=false。
+要使得每个判断中的每个条件的可能取值至少满足一次。上例中第一个判断应考虑到A=true，A=false，B=true，B=false；第二个判断应考虑到C=true，C=false，D=true，D=false，所以上例中可以设计测试用例满足下列条件
+3.1 A=true，B=true，C=true，D=true
+3.2 A=false，B=false，C=false，D=false
 
 4. 路径覆盖：要求覆盖程序中所有可能的路径。所以可以设计测试用例满足下列条件
-4.1 A=true，B=true，C＝true，D=true
-4.2 A=false，B=false，C＝false，D=false
-4.3 A=true，B=true，C＝false，D=false
-4.4 A=false，B=false，C＝true，D=true
+4.1 A=true，B=true，C=true，D=true
+4.2 A=false，B=false，C=false，D=false
+4.3 A=true，B=true，C=false，D=false
+4.4 A=false，B=false，C=true，D=true
 
 ## 参考资料
 
