@@ -12,6 +12,11 @@ Java单元测试框架主要包括 JUnit 和 TestNG，相比 JUnit，TestNG 支�
 ## 安排测试优先次序
 单元测试是典型的自底向上过程, 如果没有足够的资源测试一个系统的所有模块, 就应该先把重点放在较底层的模块。
 
+## 保持测试的独立性
+单元测试即类 (Class) 的测试。一个 “测试类” 应该只对应于一个 “被测类”, 并且 “被测类” 的行为应该被隔离测试。必须谨慎避免使用单元测试框架来测试整个程序的工作流, 这样的测试即低效又难维护。工作流测试有它自己的地盘, 但它绝不是单元测试, 必须单独建立和执行。
+
+为了保证测试稳定可靠且便于维护, 测试用例之间决不能有相互依赖, 也不能依赖执行的先后次序。
+
 ## 确保你的测试代码独立于功能代码
 把测试代码从功能代码目录中独立出来, 通常是创建一个和 src 目录同级的 test 目录，例如：产品代码所在路径为 css/src/main/，则测试代码所在路径为 css/src/test/。
 这么做保证功能代码和测试代码隔离, 目录结构清晰, 并且发布源码的时候更容易排除测试用例。
@@ -76,11 +81,6 @@ public void TestCertApplyWithResIsFailure() {
 }
 ```
 
-## 保证测试的覆盖率
-* 保证一个模块中的所有独立路径至少被执行一次
-* 对所有逻辑值均需测试 true 和 false
-* 使所有判定中各条件判断结果的所有组合至少出现一次
-
 ## 为测试分组
 
 为你的测试分组可以更加灵活的选择所要执行的测试用例，在更短的时间内完成测试，根据实际应用情况，我们通常把测试用例分成以下几组：
@@ -90,6 +90,25 @@ public void TestCertApplyWithResIsFailure() {
 
 正向测试就是测试模块在正常情况下是否完成了它应该完成的工作；逆向测试就是测试模块在异常情况下是否进行正确的处理；缺陷修复测试就是验证之前提交的缺陷是否已经被修复。
 
+## 保持测试代码结构清晰
+每个case其实都可以分为三步走，
+1. mock对象，准备测试数据和设定期望值
+2. 调用目标API
+3. 验证输出和行为
+
+所以我们可以用如下方式将3步分别放入三个分段中，这样我们一眼扫过去就可以清晰的看出一个case大体上都在干什么。
+
+```java
+@Test(dataProvider = "certStatus")
+public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exception {
+    // Mock对象
+    when(bu.getCertStatus()).thenReturn(certStatus);
+    // 方法调用
+    boolean actually = (Boolean) Whitebox.invokeMethod(updateGetCertImpl, "judgeStatus", bu);
+    // 结果验证
+    assertEquals(actually, expected);
+}
+```
 ## 确保测试代码和测试数据分离
 使用@DataProvider注解，分离测试数据和测试代码，只包含一条测试数据的测试方法可以在测试代码中准备数据，其它情况必须使用单独的方法构造测试数据对象。
 
@@ -115,30 +134,10 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exce
 }
 ```
 
-## 保持测试的独立性
-单元测试即类 (Class) 的测试。一个 “测试类” 应该只对应于一个 “被测类”, 并且 “被测类” 的行为应该被隔离测试。必须谨慎避免使用单元测试框架来测试整个程序的工作流, 这样的测试即低效又难维护。工作流测试有它自己的地盘, 但它绝不是单元测试, 必须单独建立和执行。
-
-为了保证测试稳定可靠且便于维护, 测试用例之间决不能有相互依赖, 也不能依赖执行的先后次序。
-
-## 保持测试代码结构清晰
-每个case其实都可以分为三步走，
-1. mock对象，准备测试数据和设定期望值
-2. 调用目标API
-3. 验证输出和行为
-
-所以我们可以用如下方式将3步分别放入三个分段中，这样我们一眼扫过去就可以清晰的看出一个case大体上都在干什么。
-
-```java
-@Test(dataProvider = "certStatus")
-public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exception {
-    // Mock对象
-    when(bu.getCertStatus()).thenReturn(certStatus);
-    // 方法调用
-    boolean actually = (Boolean) Whitebox.invokeMethod(updateGetCertImpl, "judgeStatus", bu);
-    // 结果验证
-    assertEquals(actually, expected);
-}
-```
+## 保证测试的覆盖率
+* 保证一个模块中的所有独立路径至少被执行一次
+* 对所有逻辑值均需测试 true 和 false
+* 使所有判定中各条件判断结果的所有组合至少出现一次
 
 ## 保持测试代码和功能代码同步更新
 遇到以下情况，请增加或修改你的单元测试代码：
