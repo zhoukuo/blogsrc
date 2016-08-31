@@ -398,6 +398,11 @@ assertEquals(actually.ENVSN), expected.ENVSN));
 assertEquals(actually, expected);
 ```
 
+* 验证私有方法
+```java
+PowerMockito.verifyPrivate(sut).invoke("validate");
+```
+
 ### 参数匹配器(Argument Matcher)
 PowerMockito在模拟方法时，如果参数的值不匹配，那么这个模拟是不会生效的，如果只是模拟值类型的参数，而且这个值是确定的，我们只需要提供对应的值就可以了，但是当我们模拟的是对象，或者是个不确定的值(如当前日期时间)，我们就只能通过匹配器来进行适配了。
 
