@@ -93,7 +93,7 @@ TestNG通过注解提供各种功能支持，所以了解TestNG的基本注解�
 ```java
 @Test(expectedExceptions = IllegalArgumentException.class,           
       expectedExceptionsMessageRegExp="NullPoint")
-public void testException(){
+public void testException() {
     throw new IllegalArgumentException("NullPoint");
 }
 ```
@@ -103,7 +103,7 @@ public void testException(){
 有时候，我们只想执行某一类的测试用例，而不是全部用例，通过分组我们可以很容易实现。
 ```java
 @Test(groups = {"systemtest"})
-public void testLogin(){
+public void testLogin() {
     System.out.println("this is test login");
 }
 ```
@@ -146,7 +146,7 @@ public Object[][] NewCertStatus() {
 }
 
 @Test(dataProvider = "certStatus")
-public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exception{
+public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exception {
     when(bu.getCertStatus()).thenReturn(certStatus);
     boolean actually = (Boolean) Whitebox.invokeMethod(updateGetCertImpl, "judgeStatus", bu);
     assertEquals(actually, expected);
@@ -157,7 +157,7 @@ public void TestJudgeStatus(CertStatus certStatus, boolean expected) throws Exce
 某些测试方法由于某种原因，如：未编写完成，或已经无效等，暂时不希望继续执行这些测试，我们可以通过设置enabled属性来完成。
 ```java
 @Test(enabled = false)
-public void testIgnore(){
+public void testIgnore() {
     System.out.println("This test case will ignore");
 }
 ```
@@ -167,7 +167,7 @@ public void testIgnore(){
 
 ```java
 @Test
-public void testValidate(){
+public void testValidate() {
     ......
     Class<UpdateGetNewEnvsnImpl> cls = UpdateGetNewEnvsnImpl.class;
     Method method = cls.getDeclaredMethod("validate", new Class[]{String.class});
@@ -183,7 +183,7 @@ public void testValidate(){
 import org.powermock.reflect.Whitebox;
 
 @Test
-public void testValidate(){
+public void testValidate() {
     ......
     Whitebox.invokeMethod(sut, “validate”, oldEnvsn);
     ......
@@ -256,6 +256,7 @@ public class UpdateGetNewEnvsnImplTest extends PowerMockTestCase {
         verify(mockedCertUpdateService).add();
         assertEquals(actually, expected);
     }
+}
 ```
 
 ### 对象模拟
@@ -279,12 +280,12 @@ public class MockitoExample2 {
     private List mockedList;  
     
     @BeforeClass
-    public beforeClass{  
+    public beforeClass() {  
         MockitoAnnotations.initMocks(this);  
     }
   
     @Test
-    public void shorthand(){  
+    public void shorthand() {  
         mockedList.add(1);  
         verify(mockedList).add(1);  
     }
@@ -368,11 +369,11 @@ verify(mockedList, times(0)).add("once");
 * 执行顺序
 ```java
 @Test  
-public void verification_in_order(){  
+public void verification_in_order() {
     List list = mock(List.class);  
     List list2 = mock(List.class);  
     list.add(1);  
-    list2.add("hello");  
+    list2.add("hello");
     list.add(2);  
     list2.add("world");  
     //将需要排序的mock对象放入InOrder  
@@ -428,7 +429,7 @@ public class AnyCertUpdateBU extends ArgumentMatcher<CertUpdateBU> {
 有时，我们想要清除所有的互动和预设，可以通过重置Mock对象来实现。
 ```java
 @Test  
-public void reset_mock(){  
+public void reset_mock() {  
     List list = mock(List.class);  
     when(list.size()).thenReturn(10);  
     list.add(1);
@@ -436,6 +437,7 @@ public void reset_mock(){
     //重置mock，清除所有的互动和预设  
     reset(list);
     Assert.assertEquals(0,list.size());
+}
 ```
 　
 
@@ -501,10 +503,6 @@ if (C || D)
 4.2 A=false，B=false，C＝false，D=false
 4.3 A=true，B=true，C＝false，D=false
 4.4 A=false，B=false，C＝true，D=true
-
-
-## 常见问题
-* 对象或函数模拟无效，还是调用真实的方法?
 
 ## 参考资料
 
