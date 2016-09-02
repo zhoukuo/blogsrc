@@ -1,5 +1,5 @@
 ---
-title: 用 TestNG 和 PowerMockito 做单元测试
+title: 用 TestNG 和 PowerMock 做单元测试
 date: 2016-08-25 17:36:18
 tags: [测试,java]
 author: zhoukuo
