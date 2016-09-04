@@ -9,7 +9,7 @@ Rob Pike，目前谷歌公司最著名的软件工程师之一，曾是贝尔实
 我在贝尔实验室工作了很多年。我在计算机科学研究中心，你会很诧异，这是个很小的实验室，但这里却创造了 Unix，我来到这里工作的时候 Unix 已经发布了第七版。从 2002 年起我来到谷歌工作，主要开发一些系统基础架构。
 
 ## 最主要的成就：
-我最为人所知的应该是我和 Brian Kernighan (Unix 开发组的重要成员)合著的两本书：《The Unix Programming Environment》 和 《程序设计实践(The Practice of Programming)》 (30年后的今天仍在印刷出版！)，影响范围最广的一件事应该是我和 Ken Thompson 共同开发完成了 UTF-8 编码格式。在其它方面，诸如计算机图形，操作系统，软件开发工具等上也做了大量的工作，最近在给谷歌开发 Go 编程语言。
+我最为人所知的应该是我和 Brian Kernighan (Unix 开发组的重要成员)合著的两本书：[《The Unix Programming Environment》](https://book.douban.com/subject/1033144/) 和 [《程序设计实践(The Practice of Programming)》](https://book.douban.com/subject/1173548/) (30年后的今天仍在印刷出版！)，影响范围最广的一件事应该是我和 Ken Thompson 共同开发完成了 UTF-8 编码格式。在其它方面，诸如计算机图形，操作系统，软件开发工具等上也做了大量的工作，最近在给谷歌开发 Go 编程语言。
 
 ## 使用最多的编程语言：
 长久以来，C语言是我编程的选择，但在我的编程生涯里，我使用过很多种语言。而目前我开发d 东西基本上都是用 Go 语言，这是我见过的最高效的一种编程语言，它在我的工具箱里已经完全取代了C语言的位置。
