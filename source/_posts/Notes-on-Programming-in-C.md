@@ -5,6 +5,7 @@ tags: [c,unix,设计]
 ---
 Rob Pike
 February 21, 1989
+原文地址：http://www.lysator.liu.se/c/pikestyle.html
 
 ## 序言
 Kernighan和Plauger写过一本很重要，也很有影响力的一本书，叫做《The Elements of Programming Style》。不过有时我感觉书中总结的规则更像是一种严格的约束编程风格的方法，而不是它们内含哲学的精简恰当的表达。如果像书中所说的那样，变量名应该更有实际的意义，那么一个冗长的有意义的名字真的更好一些么？MaximumValueUntilOverflow比maxval更好么？我可不这么认为。
