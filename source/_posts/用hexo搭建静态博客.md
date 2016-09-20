@@ -99,6 +99,7 @@ $ git clone https://github.com/wuchong/jacman.git themes/jacman.git
 * 首先注册一个『GitHub』帐号，已有的默认请忽略
 * 建立与你用户名对应的仓库，仓库名必须为『your_user_name.github.com』或『your_user_name.github.io』
 * 添加SSH公钥到『Account settings -> SSH Keys -> Add SSH Key』
+* Github托管配置
 
 前两步忽略，直说第三步，如何添加SSH-Key。
 
@@ -123,5 +124,29 @@ b0:0c:2e:67:33:ab:c1:50:10:40:0a:ba:c1:80:59:22 bu.ru@qq.com
 最后可以验证一下：
 ```bash
 ssh -T git@github.com
+```
+
+接下来说一下如何配置Github托管，安装 hexo-deployer-git，否则会报 ERROR Deployer not found: git 的错误。
+```bash
+npm install hexo-deployer-git --save
+```
+修改你的 _config.yml 配置文件如下：
+```bash
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:flyoob/flyoob.github.io.git
+  branch: master
+```
+注意这里选择的是 ssh 地址。
+生成静态文件和部署：
+```bash
+hexo g
+hexo d
+```
+最后出现如下提示就代表成功啦！
+```
+INFO  Deploy done: git
 ```
 
