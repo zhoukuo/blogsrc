@@ -1,3 +1,9 @@
+---
+title: Linus，只是为了好玩儿
+date: 2016-10-16 17:36:18
+tags: 文化
+author: zhoukuo
+---
 
 文章来源：池建强   微信：MacTalk
 
