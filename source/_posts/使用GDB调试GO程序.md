@@ -1,7 +1,7 @@
 ---
 title: 使用GDB调试Go程序
 date: 2016-10-16 17:36:18
-tags: golang
+tags: [golang,调试]
 author: zhoukuo
 ---
 
