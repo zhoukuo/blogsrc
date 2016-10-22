@@ -46,15 +46,15 @@ Docker可以帮用户构建和部署容器，用户只需要把自己的应用�
 
 ### 安装Docker引擎
 ```bash
-[root@localhost zhoukuo]# sudo yum -y install docker
+[root@localhost zhoukuo]# yum -y install docker
 ```
 ### 启动守护进程
 ```bash
-[root@localhost zhoukuo]# sudo systemctl start docker
+[root@localhost zhoukuo]# systemctl start docker
 ```
 ### 确保已经就绪
 ```bash
-[root@localhost zhoukuo]# sudo docker info
+[root@localhost zhoukuo]# docker info
 ```
 
 ## 创建我们的第一个容器
@@ -133,5 +133,5 @@ Status: Downloaded newer image for docker.io/centos:latest
 
 ## 删除所有容器
 ```bash
-[root@localhost zhoukuo]# docker rm `sudo docker ps -s -q`
+[root@localhost zhoukuo]# docker rm `docker ps -s -q`
 ```
