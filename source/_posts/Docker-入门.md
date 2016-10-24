@@ -93,6 +93,28 @@ Status: Downloaded newer image for docker.io/centos:latest
 [root@localhost zhoukuo]# docker run -i -t centos 
 ```
 
+## 容器命名
+```bash
+[root@localhost zhoukuo]# docker create --name container_1 -i -t centos
+```
+
+```bash
+[root@localhost zhoukuo]# docker run --name container_1 -i -t centos
+```
+
+docker run = docker create + docker start + docker attach
+
+## 创建守护进程
+除了这些交互式运行的容器，也可以创建长期运行的容器，
+```bash
+[root@localhost zhoukuo]# docker run --name daemon_dave -d centos /bin/sh -c "while true; do echo hello world; sleep 1; done"
+```
+我们在上面的docker run 命令使用了-d参数，因此Docker会将容器放到后台运行。
+
+## 容器内部都在干些什么
+```bash
+docker logs daemon_dave
+```
 ## 查看容器列表
 ```bash
 [root@localhost zhoukuo]# docker ps -a
@@ -115,15 +137,6 @@ Status: Downloaded newer image for docker.io/centos:latest
 ## Docker统计信息
 ```bash
 [root@localhost zhoukuo]# docker stats
-```
-
-## 容器命名
-```bash
-[root@localhost zhoukuo]# docker create --name container_1 -i -t centos
-```
-
-```bash
-[root@localhost zhoukuo]# docker run --name container_1 -i -t centos
 ```
 
 ## 删除容器
