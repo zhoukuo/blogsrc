@@ -1,7 +1,7 @@
 ---
 title: UNIX哲学
 date: 2016-08-21 15:39:06
-tags: [设计,unix]
+tags: [设计,linux]
 ---
 Unix哲学起源于Ken Thompson早期关于如何设计一个服务接口简洁、小巧精干的操作系统的思考，<!-- more -->随着Unix文化在学习如何尽可能发掘Thompson设计思想的过程中不断成长，同时一路上还从其它许多地方博采众长。
 
