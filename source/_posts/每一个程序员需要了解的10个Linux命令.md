@@ -66,7 +66,7 @@ less demo.txt
 more demo.txt
 ```
 
-## 3.sort和grep命令
+## 3.sort命令
 
 sort命令用来对文件内容进行排序。创建一个名为test.txt的文件，并且把以下内容拷贝到该文件中：
 
