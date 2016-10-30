@@ -1,5 +1,5 @@
 ---
-title: Pascal之父Niklaus Wirth：结构化的程序设计
+title: [转]Pascal之父Niklaus Wirth：结构化的程序设计
 date: 2016-07-27 13:25:06
 tags: 文化
 ---

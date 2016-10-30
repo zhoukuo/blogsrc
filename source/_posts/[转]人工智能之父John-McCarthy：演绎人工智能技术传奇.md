@@ -1,5 +1,5 @@
 ---
-title: 人工智能之父John McCarthy：演绎人工智能技术传奇
+title: [转]人工智能之父John McCarthy：演绎人工智能技术传奇
 date: 2016-07-26 13:55:23
 tags: 文化
 ---

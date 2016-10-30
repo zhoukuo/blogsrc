@@ -1,5 +1,5 @@
 ---
-title: Golang面向对象思想和实现
+title: [转]Golang面向对象思想和实现
 date: 2016-08-03 16:23:43
 tags: golang
 ---

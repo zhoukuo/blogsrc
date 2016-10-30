@@ -1,5 +1,5 @@
 ---
-title: Rob Pike：最有价值的编程忠告
+title: [转]Rob Pike：最有价值的编程忠告
 date: 2016-09-04 10:39:10
 tags: [c,linux,调试]
 ---

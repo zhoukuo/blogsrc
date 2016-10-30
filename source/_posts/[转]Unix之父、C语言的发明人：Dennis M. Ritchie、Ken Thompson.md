@@ -1,5 +1,5 @@
 ---
-title: Unix之父、C语言的发明人：Dennis M. Ritchie、Ken Thompson
+title: [转]Unix之父、C语言的发明人：Dennis M. Ritchie、Ken Thompson
 date: 2016-10-30 22:06:23
 tags: 文化
 ---

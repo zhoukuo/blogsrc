@@ -1,5 +1,5 @@
 ---
-title: UNIX哲学
+title: [转]UNIX哲学
 date: 2016-08-21 15:39:06
 tags: [设计,linux]
 ---

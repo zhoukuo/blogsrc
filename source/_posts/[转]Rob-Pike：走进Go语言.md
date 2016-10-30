@@ -1,5 +1,5 @@
 ---
-title: Rob Pike：走进Go语言
+title: [转]Rob Pike：走进Go语言
 date: 2016-08-2 22:32:48
 tags: golang
 ---
