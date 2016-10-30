@@ -1,5 +1,5 @@
 ---
-title: [转]Linus，只是为了好玩儿
+title: 转：Linus，只是为了好玩儿
 date: 2016-10-16 17:36:18
 tags: 文化
 author: zhoukuo

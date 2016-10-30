@@ -1,5 +1,5 @@
 ---
-title: Mac OS X 10.10 安装 gdb
+title: 转：Mac OS X 10.10 安装 gdb
 date: 2016-10-15 09:11:27
 tags: golang
 ---

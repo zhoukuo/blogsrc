@@ -1,5 +1,5 @@
 ---
-title: [转]Git 的日常使用
+title: 转：Git 的日常使用
 date: 2016-08-29 11:15:20
 tags: git
 ---

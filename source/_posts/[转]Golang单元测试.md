@@ -1,5 +1,5 @@
 ---
-title: [转]Golang单元测试
+title: 转：Golang单元测试
 date: 2016-08-04 10:10:30
 tags: [golang,测试]
 ---

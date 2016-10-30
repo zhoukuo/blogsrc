@@ -1,5 +1,5 @@
 ---
-title: [转]Notes on Programming in C
+title: 转：Notes on Programming in C
 date: 2016-09-04 10:04:16
 tags: [c,linux,设计]
 ---
