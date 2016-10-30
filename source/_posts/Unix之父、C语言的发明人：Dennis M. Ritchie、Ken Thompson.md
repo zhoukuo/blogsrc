@@ -1,7 +1,7 @@
 ---
 title: Unix之父、C语言的发明人：Dennis M. Ritchie、Ken Thompson
 date: 2016-10-30 22:06:23
-tags: linux
+tags: 文化
 ---
 
 Unix之父、C语言的发明人, Kenneth Lane Thompson，1943年2月4日-，小名为Ken Thompson，为美国计算机科学学者，与Dennis M. Ritchie同为1983年图灵奖得主。
