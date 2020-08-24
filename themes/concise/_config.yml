@@ -12,18 +12,16 @@ widgets:
 
 #### Links
 links:
-
-        阮一峰的网络日志：http://www.ruanyifeng.com/blog/
-        陈浩的技术博客：https://coolshell.cn
-        云风的技术博客：https://blog.codingnow.com/
-        菜鸟教程：https://www.runoob.com
-        敏捷管理工具：https://taiga.io
-        代码托管平台：https://gitea.io
-        持续交付平台：https://drone.io
-        接口管理平台：https://www.apifox.cn
-        在线绘图：https://www.draw.io
-        知识分享：https://gohugo.io/
-
+  阮一峰的网络日志: http://www.ruanyifeng.com/blog
+  陈浩的技术博客: https://coolshell.cn
+  云风的技术博客: https://blog.codingnow.com
+  菜鸟教程: https://www.runoob.com
+  敏捷管理工具: https://taiga.io
+  代码托管平台: https://gitea.io
+  持续交付平台: https://drone.io
+  接口管理平台: https://www.apifox.cn
+  知识分享: https://gohugo.io  
+  在线绘图: https://www.draw.io
 excerpt_link: Read More ›
 
 #### Image
