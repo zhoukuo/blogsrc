@@ -1,7 +1,7 @@
 ---
 title: 用hexo搭建静态博客
 date: 2016-07-31 15:48:18
-tags: hexo
+tags: 内容管理
 ---
 一直纠结在哪里写博客，尝试过CSDN，开源中国，cnblogs，自己搭建过wordPress，但都不满意。
 <!--more-->

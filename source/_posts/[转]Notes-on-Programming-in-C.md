@@ -1,7 +1,7 @@
 ---
 title: 转：Notes on Programming in C
 date: 2016-09-04 10:04:16
-tags: [c,linux,设计]
+tags: 程序设计
 ---
 Rob Pike
 February 21, 1989

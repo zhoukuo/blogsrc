@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Geek's way
+title: 平凡之路
 subtitle: 生活不止眼前的苟且，还有诗和远方
 description:
 author: zhoukuo
@@ -71,6 +71,6 @@ theme: concise
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:zhoukuo/zhoukuo.github.com.git
+  repository: git@github.com:zhoukuo/zhoukuo.github.io.git
   branch: master
 
