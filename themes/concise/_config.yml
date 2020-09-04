@@ -16,10 +16,13 @@ links:
   陈浩的技术博客: https://coolshell.cn
   云风的技术博客: https://blog.codingnow.com
   菜鸟教程: https://www.runoob.com
-  敏捷管理工具: https://taiga.io
+  敏捷管理平台: https://taiga.io
   代码托管平台: https://gitea.io
   持续交付平台: https://drone.io
   接口管理平台: https://www.apifox.cn
+  性能测试平台: https://www.locust.io
+  安全测试平台: https://www.acunetix.com
+  代码静态分析平台: https://www.sonarqube.org
   知识分享: https://gohugo.io  
   在线绘图: https://www.draw.io
 excerpt_link: Read More ›
